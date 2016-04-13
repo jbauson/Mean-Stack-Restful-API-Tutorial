@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 var mongojs = require('mongojs');
-var db = mongojs('contactlist',['contactlist']);
+var db = mongojs('mongodb://admin:admin@ds011308.mlab.com:11308/pokerx', ['contactlist'])
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -51,7 +51,6 @@ app.put('/contactlist/:id',function(req,res){
 app.get('/jay',function(req,res){
     res.send(JSON.stringify('Hey Bless'));
 });
-
 
 app.listen(port);
 console.log('server is running on '+port);
