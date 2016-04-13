@@ -9,7 +9,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 
 app.get('/contactlist',function(req,res){
-    console.log('I receoved a GET request');
+    console.log('I received a GET request');
     db.contactlist.find(function(err,docs){
         console.log(docs);
         res.json(docs);
