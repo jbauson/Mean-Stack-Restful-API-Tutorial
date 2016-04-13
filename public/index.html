@@ -1,17 +1,36 @@
 <!doctype html>
-<html ng-app="">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>LCT</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 </head>
-<body>
+<body ng-app="myApp">
     <div class="container">
-        <h2>Hi Bless</h2>
-        <input type="text" ng-model="jay">
-        <h1>{{ jay }}</h1>
+        <div ng-controller="AppCtrl">
+            <h2>Contact List App</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="contact in contactlist">
+                        <td>{{ contact.name }}</td>
+                        <td>{{ contact.email }}</td>
+                        <td>{{ contact.number }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <script src="js/angular.js"></script>
+
+
+    <script src="js/angular.min.js"></script>
+    <script src="controllers/controller.js"></script>
 </body>
 </html>
