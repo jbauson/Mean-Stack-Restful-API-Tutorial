@@ -36,6 +36,8 @@ app.controller('AppCtrl', ['$scope','$http', function($scope,$http){
         });
     };
 
-
+    $scope.clear = function(){
+        $scope.contact = "";
+    }
 }]);
 
